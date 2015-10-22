@@ -29,9 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'id_PhanLoai',
+            [
+                'attribute'=> 'id_PhanLoai',
+                'value'=>$model->phanloai()->one()->TenPhanLoai?$model->phanloai()->one()->TenPhanLoai:"Chưa cập nhật"
+            ],
             'URL:ntext',
         ],
     ]) ?>
+
+    <img src="<?= $model->URL?>">
 
 </div>
